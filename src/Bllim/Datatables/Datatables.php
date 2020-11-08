@@ -64,12 +64,12 @@ class Datatables
      */
     public function __construct()
     {
-        $this->setData($this->processData($this->dataCompatibilityForMultiLaravel6AndUpper()));
+        $this->setData($this->processData($this->dataCompatibilityForLaravel6AndUpper()));
 
         return $this;
     }
 
-    public function dataCompatibilityForMultiLaravel6AndUpper(){
+    public function dataCompatibilityForLaravel6AndUpper(){
         if((int) app()->version()  >= ((int) 6)){
             return Request::all();
         }else{
